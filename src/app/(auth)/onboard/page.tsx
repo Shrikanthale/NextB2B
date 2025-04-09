@@ -126,17 +126,6 @@ export default function AuthPage() {
             </button>
           </motion.form>
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-300 mb-2">or continue with</p>
-            <div className="flex justify-center gap-4">
-              <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full font-semibold shadow-md">
-                Google
-              </button>
-              <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full font-semibold shadow-md">
-                GitHub
-              </button>
-            </div>
-          </div>
 
           <p className="mt-6 text-center text-sm text-gray-300">
             {mode === "signin" ? "Don’t have an account?" : "Already a user?"} {" "}
