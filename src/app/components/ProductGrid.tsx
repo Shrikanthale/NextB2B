@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from 'next/image'
+import Link from "next/link";
 export default function ProductGrid({ posts }) {
     return (
         <motion.div
@@ -33,9 +34,12 @@ export default function ProductGrid({ posts }) {
                             <span className="text-lg font-semibold text-white">
                                 ${Math.floor(Math.random() * 200 + 20)}.00
                             </span>
-                            <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 text-white font-semibold px-4 py-2 rounded-full shadow-md transition-all">
+                            <Link href={"/cart"} >
+                            
+                            <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 text-white font-semibold px-4 py-2 rounded-full shadow-md transition-all ">
                                 Add to Cart
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>
