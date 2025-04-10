@@ -22,17 +22,17 @@ export default function AuthPage() {
       </Head>
 
       <div
-        className={`min-h-screen flex items-center justify-center font-[Inter] relative overflow-hidden transition-all duration-500 ${
+        className={`min-h-screen flex items-center justify-center font-[Inter] relative overflow-hidden transition-all duration-500 text-sm ${
           darkMode ? "bg-[#0f172a] text-white" : "bg-slate-100 text-gray-800"
         }`}
       >
         <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-gradient-to-r from-purple-700 via-pink-500 to-yellow-500 animate-[spin_20s_linear_infinite] opacity-20 blur-[160px]"></div>
+          <div className="w-full h-full bg-gradient-to-r from-purple-700 via-pink-500 to-yellow-500 animate-[spin_20s_linear_infinite] opacity-20 blur-[120px]"></div>
         </div>
 
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-6 right-6 z-20 px-4 py-2 rounded-full text-sm font-semibold shadow-md backdrop-blur-lg bg-white/10 hover:bg-white/20"
+          className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md backdrop-blur-lg bg-white/10 hover:bg-white/20 cursor-pointer"
         >
           {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
         </button>
@@ -41,27 +41,27 @@ export default function AuthPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl px-10 py-12 w-full max-w-md"
+          className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl px-6 py-8 w-full max-w-sm"
         >
-          <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-400 text-white text-4xl rounded-full shadow-xl animate-bounce">
+          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-400 text-white text-2xl rounded-full shadow-xl animate-bounce">
             🚀
           </div>
 
-          <h1 className="text-3xl font-bold text-center">
+          <h1 className="text-xl font-bold text-center">
             {mode === "signin" ? "Welcome Back" : "Create Account"}
           </h1>
-          <p className="text-center text-sm text-gray-300 mt-2">
+          <p className="text-center text-xs text-gray-300 mt-1.5">
             {mode === "signin"
               ? "Login to your account"
               : "Sign up to get started"}
           </p>
 
-          <div className="flex justify-center gap-4 my-6">
+          <div className="flex justify-center gap-2 my-4">
             <button
               onClick={() => setMode("signin")}
-              className={`px-5 py-2 text-sm rounded-full transition-all duration-300 font-semibold shadow-sm ${
+              className={`px-4 py-1.5 text-xs rounded-full font-semibold shadow-sm transition-all duration-300 cursor-pointer ${
                 mode === "signin"
-                  ? "bg-gradient-to-r from-purple-600 to-pink-500 shadow-lg text-white"
+                  ? "bg-gradient-to-r from-purple-600 to-pink-500 shadow-md text-white"
                   : "bg-white/5 hover:bg-white/10 text-white"
               }`}
             >
@@ -69,9 +69,9 @@ export default function AuthPage() {
             </button>
             <button
               onClick={() => setMode("signup")}
-              className={`px-5 py-2 text-sm rounded-full transition-all duration-300 font-semibold shadow-sm ${
+              className={`px-4 py-1.5 text-xs rounded-full font-semibold shadow-sm transition-all duration-300 cursor-pointer ${
                 mode === "signup"
-                  ? "bg-gradient-to-r from-pink-600 to-yellow-500 shadow-lg text-white"
+                  ? "bg-gradient-to-r from-pink-600 to-yellow-500 shadow-md text-white"
                   : "bg-white/5 hover:bg-white/10 text-white"
               }`}
             >
@@ -81,54 +81,53 @@ export default function AuthPage() {
 
           <motion.form
             key={mode}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             {mode === "signup" && (
               <div>
-                <label className="block text-sm mb-1">Full Name</label>
+                <label className="block text-xs mb-1">Full Name</label>
                 <input
                   type="text"
                   required
-                  className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full px-3 py-1.5 rounded-lg bg-white/20 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-pink-400 text-sm"
                   placeholder="Enter your name"
                 />
               </div>
             )}
 
             <div>
-              <label className="block text-sm mb-1">Email</label>
+              <label className="block text-xs mb-1">Email</label>
               <input
                 type="email"
                 required
-                className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-purple-400"
+                className="w-full px-3 py-1.5 rounded-lg bg-white/20 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-purple-400 text-sm"
                 placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label className="block text-sm mb-1">Password</label>
+              <label className="block text-xs mb-1">Password</label>
               <input
                 type="password"
                 required
-                className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-purple-400"
+                className="w-full px-3 py-1.5 rounded-lg bg-white/20 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-purple-400 text-sm"
                 placeholder="Enter your password"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 transition-all rounded-full text-white font-semibold shadow-xl"
+              className="w-full py-2 text-sm bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 transition-all rounded-full text-white font-semibold shadow-md cursor-pointer"
             >
               {mode === "signin" ? "Sign In" : "Sign Up"}
             </button>
           </motion.form>
 
-
-          <p className="mt-6 text-center text-sm text-gray-300">
-            {mode === "signin" ? "Don’t have an account?" : "Already a user?"} {" "}
+          <p className="mt-4 text-center text-xs text-gray-300">
+            {mode === "signin" ? "Don’t have an account?" : "Already a user?"}{" "}
             <span
               className="text-pink-400 hover:underline cursor-pointer font-semibold"
               onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
