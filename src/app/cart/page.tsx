@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 
 export default function CartPage() {
-
   const cartItems = [
     {
       id: 1,
@@ -34,45 +33,43 @@ export default function CartPage() {
         />
       </Head>
 
-      <div
-        className={`min-h-screen p-10 font-[Inter] transition-all duration-500 relative ${"bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white"}`}
-      >
+      <div className="min-h-screen p-6 font-[Inter] transition-all duration-500 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl font-extrabold mb-12 text-center text-pink-400 drop-shadow-xl"
+          className="text-4xl font-extrabold mb-10 text-center text-pink-400 drop-shadow-xl"
         >
           🛒 Your Cart
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {cartItems.map((item) => (
             <motion.div
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               key={item.id}
-              className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl shadow-xl overflow-hidden hover:shadow-pink-500/50 transition-all"
+              className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg overflow-hidden hover:shadow-pink-500/40 transition-all"
             >
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-56 object-cover rounded-t-3xl"
+                className="w-full h-44 object-cover rounded-t-2xl"
               />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-yellow-400 mb-2">
+              <div className="p-4">
+                <h2 className="text-xl font-bold text-yellow-400 mb-1">
                   {item.title}
                 </h2>
-                <p className="text-sm text-gray-300 mb-4">
+                <p className="text-sm text-gray-300 mb-3">
                   {item.desc}
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-bold text-white">
+                  <span className="text-base font-bold text-white">
                     {item.price}
                   </span>
                 </div>
@@ -85,12 +82,12 @@ export default function CartPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
-          <p className="text-xl font-semibold mb-4 text-white">
+          <p className="text-lg font-semibold mb-3 text-white">
             Total: <span className="text-green-400">${total}</span>
           </p>
-          <button className="bg-gradient-to-r from-green-400 via-teal-500 to-blue-500 hover:from-pink-500 hover:to-yellow-400 text-white font-bold px-10 py-4 rounded-full shadow-lg text-xl transition-all">
+          <button className="bg-gradient-to-r from-green-400 via-teal-500 to-blue-500 hover:from-pink-500 hover:to-yellow-400 text-white font-bold px-8 py-3 rounded-full shadow-lg text-lg transition-all">
             🚀 Checkout Now
           </button>
         </motion.div>
